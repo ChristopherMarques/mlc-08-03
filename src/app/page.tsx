@@ -13,20 +13,19 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground relative overflow-x-hidden w-full">
-      <LoadingScreen onComplete={() => setLoading(false)} />
-
-      {/* We can choose to render the page content immediately behind the curtain, 
-          so that images load while the animation plays. 
-          When the curtain slides up, the hero video will be playing. */}
-      <div className={`transition-opacity duration-1000 ${loading ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"}`}>
-        <Hero />
-        <div className="relative z-20 bg-background">
-          <Counter />
-          <Gallery />
-          <Manifesto />
-          <Footer />
+      {loading ? (
+        <LoadingScreen onComplete={() => setLoading(false)} />
+      ) : (
+        <div className="w-full h-full">
+          <Hero />
+          <div className="relative z-20 bg-background">
+            <Counter />
+            <Gallery />
+            <Manifesto />
+            <Footer />
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 }

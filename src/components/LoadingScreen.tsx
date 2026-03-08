@@ -7,24 +7,17 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Lock body scroll while loading
-    document.body.style.overflow = "hidden";
-
     const timer = setTimeout(() => {
       setIsVisible(false);
 
-      // Allow scroll again after animation finishes sliding out
+      // Trigger completion after animation finishes sliding out
       setTimeout(() => {
-        document.body.style.overflow = "unset";
         onComplete();
       }, 1000);
 
     }, 2800); // Wait for the drawing + fill animation
 
-    return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "unset";
-    };
+    return () => clearTimeout(timer);
   }, [onComplete]);
 
   return (
