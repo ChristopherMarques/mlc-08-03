@@ -93,7 +93,7 @@ export function Hero() {
                     transition={{ delay: 3.5, type: "spring", stiffness: 200, damping: 10 }}
                     className="pt-8"
                 >
-                    <a href="#galeria" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-primary-foreground font-caveat text-2xl hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    <a href="#historia" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-primary-foreground font-caveat text-2xl hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                         Nossa História
                     </a>
                 </motion.div>
